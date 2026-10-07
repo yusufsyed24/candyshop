@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 380"><g transform="translate(10 30) scale(0.9)"><defs><radialGradient id="g0" cx="35%" cy="30%" r="80%"><stop offset="0" stop-color="#fff" stop-opacity=".7"/><stop offset=".35" stop-color="#e6335a"/><stop offset="1" stop-color="#000" stop-opacity=".25"/></radialGradient></defs>
+<path d="M62 150 L18 108 L18 192 Z" fill="#e6335a" opacity=".85"/><path d="M238 150 L282 108 L282 192 Z" fill="#e6335a" opacity=".85"/>
+<ellipse cx="150" cy="150" rx="92" ry="78" fill="#e6335a"/><ellipse cx="150" cy="150" rx="92" ry="78" fill="url(#g0)"/>
+<path d="M78 120 Q150 90 222 120" stroke="#fff" stroke-opacity=".55" stroke-width="6" fill="none" stroke-linecap="round"/>
+<text x="150" y="160" text-anchor="middle" font-family="Georgia,serif" font-weight="800" font-size="34" fill="#fff">RANI</text>
+<text x="150" y="188" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="16" fill="#fff" letter-spacing="2"></text></g><g transform="translate(210 10) scale(0.8)"><defs><radialGradient id="g1" cx="35%" cy="30%" r="80%"><stop offset="0" stop-color="#fff" stop-opacity=".7"/><stop offset=".35" stop-color="#ff8a1f"/><stop offset="1" stop-color="#000" stop-opacity=".25"/></radialGradient></defs>
+<path d="M62 150 L18 108 L18 192 Z" fill="#ff8a1f" opacity=".85"/><path d="M238 150 L282 108 L282 192 Z" fill="#ff8a1f" opacity=".85"/>
+<ellipse cx="150" cy="150" rx="92" ry="78" fill="#ff8a1f"/><ellipse cx="150" cy="150" rx="92" ry="78" fill="url(#g1)"/>
+<path d="M78 120 Q150 90 222 120" stroke="#fff" stroke-opacity=".55" stroke-width="6" fill="none" stroke-linecap="round"/>
+<text x="150" y="160" text-anchor="middle" font-family="Georgia,serif" font-weight="800" font-size="34" fill="#fff">RANI</text>
+<text x="150" y="188" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="16" fill="#fff" letter-spacing="2"></text></g><g transform="translate(300 150) scale(0.75)"><defs><radialGradient id="g2" cx="35%" cy="30%" r="80%"><stop offset="0" stop-color="#fff" stop-opacity=".7"/><stop offset=".35" stop-color="#3f5bd6"/><stop offset="1" stop-color="#000" stop-opacity=".25"/></radialGradient></defs>
+<path d="M62 150 L18 108 L18 192 Z" fill="#3f5bd6" opacity=".85"/><path d="M238 150 L282 108 L282 192 Z" fill="#3f5bd6" opacity=".85"/>
+<ellipse cx="150" cy="150" rx="92" ry="78" fill="#3f5bd6"/><ellipse cx="150" cy="150" rx="92" ry="78" fill="url(#g2)"/>
+<path d="M78 120 Q150 90 222 120" stroke="#fff" stroke-opacity=".55" stroke-width="6" fill="none" stroke-linecap="round"/>
+<text x="150" y="160" text-anchor="middle" font-family="Georgia,serif" font-weight="800" font-size="34" fill="#fff">RANI</text>
+<text x="150" y="188" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="16" fill="#fff" letter-spacing="2"></text></g><g transform="translate(120 140) scale(1)"><defs><radialGradient id="g3" cx="35%" cy="30%" r="80%"><stop offset="0" stop-color="#fff" stop-opacity=".7"/><stop offset=".35" stop-color="#ffb400"/><stop offset="1" stop-color="#000" stop-opacity=".25"/></radialGradient></defs>
+<path d="M62 150 L18 108 L18 192 Z" fill="#ffb400" opacity=".85"/><path d="M238 150 L282 108 L282 192 Z" fill="#ffb400" opacity=".85"/>
+<ellipse cx="150" cy="150" rx="92" ry="78" fill="#ffb400"/><ellipse cx="150" cy="150" rx="92" ry="78" fill="url(#g3)"/>
+<path d="M78 120 Q150 90 222 120" stroke="#fff" stroke-opacity=".55" stroke-width="6" fill="none" stroke-linecap="round"/>
+<text x="150" y="160" text-anchor="middle" font-family="Georgia,serif" font-weight="800" font-size="34" fill="#fff">RANI</text>
+<text x="150" y="188" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="16" fill="#fff" letter-spacing="2"></text></g><g transform="translate(-10 190) scale(0.7)"><defs><radialGradient id="g4" cx="35%" cy="30%" r="80%"><stop offset="0" stop-color="#fff" stop-opacity=".7"/><stop offset=".35" stop-color="#8e3fbf"/><stop offset="1" stop-color="#000" stop-opacity=".25"/></radialGradient></defs>
+<path d="M62 150 L18 108 L18 192 Z" fill="#8e3fbf" opacity=".85"/><path d="M238 150 L282 108 L282 192 Z" fill="#8e3fbf" opacity=".85"/>
+<ellipse cx="150" cy="150" rx="92" ry="78" fill="#8e3fbf"/><ellipse cx="150" cy="150" rx="92" ry="78" fill="url(#g4)"/>
+<path d="M78 120 Q150 90 222 120" stroke="#fff" stroke-opacity=".55" stroke-width="6" fill="none" stroke-linecap="round"/>
+<text x="150" y="160" text-anchor="middle" font-family="Georgia,serif" font-weight="800" font-size="34" fill="#fff">RANI</text>
+<text x="150" y="188" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="16" fill="#fff" letter-spacing="2"></text></g></svg>

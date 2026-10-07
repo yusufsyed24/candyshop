@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /wholesale-order
+
+Sitemap: https://www.blessconcandy.com/sitemap.xml
