@@ -12,7 +12,7 @@ const STATES = {
 };
 const OTHER = "Other (type your city)";
 const $ = s => document.querySelector(s);
-const WA = (typeof CFG!=="undefined" && CFG.whatsapp) || "923138993279";
+const WA = (typeof CFG!=="undefined" && CFG.whatsapp) || "923413905030";
 const MAIL = (typeof CFG!=="undefined" && CFG.email) || "blessconcandy@gmail.com";
 
 function opt(v,t,sel){ const o=document.createElement("option"); o.value=v; o.textContent=t||v; if(sel) o.selected=true; return o; }
