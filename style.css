@@ -496,3 +496,96 @@ h1,h2,h3,p,li,a,label{overflow-wrap:anywhere}
 .fgrid .fol{margin:16px 0 10px}
 @media(max-width:860px){.fgrid .soc{width:46px;height:46px}}
 @media(hover:none){.soc:hover{transform:none}}
+
+/* ===== Rani Candy wholesale rate card (wholesale pages) ===== */
+.qt{background:linear-gradient(180deg,#fff8fb 0%,#fff 100%)}
+.qt .qthead{background:linear-gradient(135deg,#0b2a7a,#081a60);color:#fff;border-radius:28px;padding:34px 30px 70px;position:relative;overflow:hidden;box-shadow:var(--sh)}
+.qt .qthead:before{content:"";position:absolute;right:-90px;top:-110px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle at 35% 35%,rgba(255,111,163,.55),rgba(196,92,240,.25) 60%,transparent 72%)}
+.qt .qthead>*{position:relative}
+.qt .qtgold{display:inline-block;background:#ffd23f;color:#14237a;padding:4px 14px;border-radius:99px;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.qt .qthead h2{font-size:clamp(1.9rem,4vw,2.9rem);margin:12px 0 8px}
+.qt .qthead h2 em{font-style:normal;color:#ffc93a}
+.qt .qthead p{color:#dfe6ff;max-width:560px}
+.qt .qtdate{margin-top:10px;font-size:.88rem;color:#cdd8ff}
+.qt .qtdate b{color:#fff}
+.qt .qtchips{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:-44px 18px 0;position:relative;z-index:2}
+.qt .qtchips div{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px 8px;text-align:center;box-shadow:var(--sh)}
+.qt .qtchips b{display:block;font-family:Fraunces,serif;font-size:1.6rem;color:var(--pink);line-height:1.1}
+.qt .qtchips span{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;font-weight:600}
+.qt .qttbl{width:100%;border-collapse:separate;border-spacing:0;margin-top:28px;background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:var(--sh)}
+.qt .qttbl th{background:linear-gradient(90deg,var(--pink-d),var(--pink));color:#fff;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;text-align:right;padding:15px 22px;font-weight:600}
+.qt .qttbl th:first-child,.qt .qttbl td:first-child{text-align:left}
+.qt .qttbl td{padding:18px 22px;text-align:right;border-top:1px solid var(--line);font-weight:600}
+.qt .qttbl tbody tr:first-child td{border-top:0}
+.qt .qttbl td:first-child{font-size:1rem}
+.qt .qttbl .qn{font-family:Fraunces,serif;font-size:1.45rem;color:var(--ink)}
+.qt .qttbl .dot{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:10px}
+.qt .qttbl tr.best td{background:linear-gradient(90deg,#fff6d2,#fffbe8)}
+.qt .qttbl tr.best .qn{color:var(--pink-d)}
+.qt .qtbadge{display:inline-block;background:var(--ok);color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.08em;padding:3px 10px;border-radius:99px;margin-left:10px;vertical-align:middle;text-transform:uppercase}
+.qt .qttbl tbody tr{transition:.2s}.qt .qttbl tbody tr:hover td{background:#fff0f6}.qt .qttbl tr.best:hover td{background:#fff3c4}
+.qt .qtearn{display:grid;grid-template-columns:1fr 1.15fr;gap:22px;margin-top:26px}
+.qt .qtcard{background:#fff;border:1px solid var(--line);border-radius:22px;padding:24px;box-shadow:var(--sh)}
+.qt .qtcard h3{font-size:1.3rem;color:#0b2a7a;margin-bottom:6px;display:flex;align-items:center;gap:10px}
+.qt .qtcard h3 span{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#fde3ee;font-size:1rem}
+.qt .qtcard>p{color:var(--muted);font-size:.9rem;margin-bottom:16px}
+.qt .qtcalc{display:flex;align-items:center;gap:8px;margin-bottom:16px}
+.qt .qtcalc div{flex:1;text-align:center;border-radius:14px;padding:10px 4px;background:#f6f1ff;border:1px solid #e6dcf8}
+.qt .qtcalc div b{display:block;font-family:Fraunces,serif;font-size:1.25rem;color:#0b2a7a;line-height:1.1}
+.qt .qtcalc div span{font-size:.65rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:600}
+.qt .qtcalc div.g{background:#e8f8ef;border-color:#bfe9d0}.qt .qtcalc div.g b{color:#14803f}
+.qt .qtcalc i{font-style:normal;font-weight:700;color:var(--pink);font-size:1.3rem}
+.qt .qtmini,.qt .qtsup{width:100%;border-collapse:collapse;font-size:.92rem}
+.qt .qtmini td{padding:9px 0;border-top:1px dashed var(--line)}
+.qt .qtmini tr:first-child td{border-top:0}
+.qt .qtmini td:last-child{text-align:right;font-weight:700}
+.qt .qtmini .g,.qt .qtsup b{color:#14803f}
+.qt .qtsup th{font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);text-align:right;padding:0 0 8px;font-weight:600}
+.qt .qtsup th:first-child,.qt .qtsup td:first-child{text-align:left}
+.qt .qtsup td{padding:12px 0;border-top:1px dashed var(--line);text-align:right}
+.qt .qtsup td:first-child{font-weight:600}
+.qt .qtsup td:first-child small{display:block;font-weight:400;font-size:.75rem;color:var(--muted)}
+.qt .qtsup tr.hl td{background:#fffbe8}
+.qt .qtfl{display:grid;grid-template-columns:repeat(7,1fr);gap:12px;margin-top:14px}
+.qt .qtfl div{background:#fff;border:1px solid var(--line);border-radius:18px;text-align:center;padding:10px 6px 12px;box-shadow:0 6px 16px rgba(233,30,99,.08);transition:.25s}
+.qt .qtfl div:hover{transform:translateY(-5px)}
+.qt .qtfl img{width:100%;height:84px;object-fit:contain;margin:0 auto 6px}
+.qt .qtfl span{font-size:.8rem;font-weight:600;line-height:1.2;display:block}
+.qt .qtsub{font-family:Fraunces,serif;font-weight:800;font-size:1.3rem;color:var(--pink);margin-top:30px}
+.qt .qtorder{margin-top:26px;background:#fff7d8;border:1px solid #f4dc7a;border-radius:20px;padding:18px 22px;color:#5b4a14;font-size:.95rem}
+.qt .qtorder b{color:#3d2f05}
+.qt .qtnote{text-align:center;font-size:.8rem;color:var(--muted);font-style:italic;margin-top:12px}
+.qt .qtcta{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:22px}
+@media(max-width:860px){
+ .qt .qtearn{grid-template-columns:1fr}
+ .qt .qtfl{grid-template-columns:repeat(4,1fr)}
+}
+@media(max-width:640px){
+ .qt .qthead{padding:26px 20px 64px;border-radius:22px}
+ .qt .qtchips{grid-template-columns:repeat(2,1fr);margin:-40px 10px 0;gap:10px}
+ .qt .qttbl thead{display:none}
+ .qt .qttbl,.qt .qttbl tbody,.qt .qttbl tr,.qt .qttbl td{display:block;width:100%}
+ .qt .qttbl{background:none;border:0;box-shadow:none;border-radius:0;overflow:visible}
+ .qt .qttbl tr{background:#fff;border:1px solid var(--line);border-radius:20px;margin-bottom:14px;box-shadow:var(--sh);overflow:hidden}
+ .qt .qttbl td{border-top:0;padding:10px 18px;text-align:left!important;display:flex;justify-content:space-between;align-items:center;gap:10px}
+ .qt .qttbl td:first-child{background:#fdf0f5;font-size:.95rem;flex-wrap:wrap}
+ .qt .qttbl td[data-l]:before{content:attr(data-l);font-family:Poppins,system-ui,sans-serif;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
+ .qt .qttbl tr.best td:first-child{background:#fff3c4}.qt .qttbl tr.best td{background:#fffbe8}
+ .qt .qtfl{grid-template-columns:repeat(3,1fr)}
+ .qt .qtfl img{height:70px}
+ .qt .qtcalc{flex-wrap:wrap}
+}
+
+/* wholesale order: live estimate */
+.wlinetot{display:inline-block;margin:6px 0 0 6px;font-size:.75rem;font-weight:700;color:#14803f;background:#e8f8ef;padding:2px 10px;border-radius:99px}
+.west{margin-top:22px;background:linear-gradient(135deg,#fffbe8,#fff0f6);border:1.5px solid #f4dc7a;border-radius:var(--r);padding:18px 22px;box-shadow:var(--sh)}
+.west>b{display:block;font-family:Fraunces,serif;font-size:1.15rem;color:var(--pink-d);margin-bottom:8px}
+.west-rows>div{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-top:1px dashed #ecd9a0;font-size:.92rem}
+.west-rows>div:first-child{border-top:0}
+.west-rows b{white-space:nowrap}
+.west-rows .west-total{border-top:2px solid var(--pink);margin-top:6px;padding-top:10px;font-size:1.05rem;font-weight:700}
+.west-rows .west-total b{color:#14803f;font-size:1.25rem}
+.west small{display:block;margin-top:10px;color:var(--muted);font-size:.78rem;line-height:1.5}
+.west-done{margin:10px 0;font-weight:700;color:#14803f;background:#e8f8ef;border-radius:14px;padding:10px 14px}
+@media(max-width:640px){.west{padding:14px 16px}.west-rows>div{flex-direction:column;gap:2px}}
+.wlinetot[hidden]{display:none}
