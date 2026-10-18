@@ -2,7 +2,7 @@
 
 ## Already done in the website
 - Karachi keywords in titles, descriptions and headings of the main pages
-- Two Karachi landing pages: /wholesale-candy-karachi and /wedding-candy-favours-karachi
+- Karachi landing page: /wedding-candy-favours-karachi
 - Homepage Karachi section with 5 FAQs (FAQ rich results markup included)
 - Structured data (areaServed: Karachi, Sindh, Pakistan) on every page
 - Clean URLs everywhere, en-PK language tags, geo tags, updated sitemap.xml, robots.txt
@@ -10,10 +10,10 @@
 
 ## Do these yourself (they matter most for "Karachi" searches)
 1. **Google Business Profile**: create it at business.google.com, category "Candy store" or
-   "Confectionery wholesaler", add your Karachi address, +92 341 3905030, website, photos, hours.
+   "Confectionery shop", add your Karachi address, +92 341 3905030, website, photos, hours.
    Ask happy customers for reviews. This drives the Google Maps / "near me" results.
 2. **Google Search Console**: add https://www.blessconcandy.com, verify it, submit sitemap.xml,
-   then use "URL Inspection > Request indexing" for the two new Karachi pages.
+   then use "URL Inspection > Request indexing" for the Karachi landing page.
 3. Use the SAME name, address and phone (NAP) everywhere: Google profile, Facebook, Instagram bio,
    TikTok, WhatsApp Business, and this website's Contact page.
 4. Put the website link in the Instagram, Facebook and TikTok bios, and mention "Karachi" in each bio.

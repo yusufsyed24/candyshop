@@ -78,7 +78,7 @@ const SOCIAL=[
 const socialHTML=cls=>`<div class="social ${cls||""}">${SOCIAL.map(s=>`<a class="soc ${s[2]}" href="${s[1]}" target="_blank" rel="noopener me" aria-label="Blesscon Candy on ${s[0]}" title="${s[0]}">${s[3]}</a>`).join("")}</div>`;
 function layout(){
   const cur=document.body.dataset.page;
-  const L=[["home","index.html","Home"],["products","products.html","Order Now"],["wholesale","wholesale.html","Wholesale"],["custom","custom-order.html","Custom Orders"],["about","about.html","About Us"],["careers","careers.html","Careers"],["contact","contact.html","Contact"]];
+  const L=[["home","index.html","Home"],["products","products.html","Order Now"],["custom","custom-order.html","Custom Orders"],["about","about.html","About Us"],["careers","careers.html","Careers"],["contact","contact.html","Contact"]];
   document.body.insertAdjacentHTML("afterbegin",`
   <a class="announce" href="custom-order.html"><span class="ann-in"><span class="ann-ico" aria-hidden="true">🎉</span><span class="ann-txt"><b>We accept customized orders</b> for weddings, parties &amp; functions</span><span class="ann-go">Customize →</span></span></a>
   <header><div class="wrap nav">
@@ -90,7 +90,7 @@ function layout(){
     </div></div></header>`);
   document.body.insertAdjacentHTML("beforeend",`
   <footer><div class="wrap"><div class="fgrid">
-    <div><h4>Blesscon Candy</h4><p>Fruit candy, sour chews, toffees and energy candies for retailers, wholesalers and distribution partners.</p></div>
+    <div><h4>Blesscon Candy</h4><p>Fruit candy, sour chews, toffees and energy candies, available to order online.</p></div>
     <div><h4>Explore</h4>${L.map(l=>`<a href="${l[1]}">${l[2]}</a>`).join("")}<a href="catalogue.html">Product Catalogue</a></div>
     <div><h4>Contact</h4><a href="https://wa.me/${CFG.whatsapp}">WhatsApp: +92 3923413905030</a><a href="mailto:${CFG.email}">${CFG.email}</a><h4 class="fol">Follow us</h4>${socialHTML()}</div>
     <div class="copy">© 2026 Blesscon Candy. All rights reserved.</div>

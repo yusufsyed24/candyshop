@@ -68,6 +68,17 @@ if(loc){
   });
 }
 
+/* ---------- wholesale rate list (all products) ---------- */
+const rl = $("#wsRates");
+if(rl){
+  const R = n => "Rs. " + Math.round(n).toLocaleString("en-US");
+  rl.innerHTML = CATS.map(c=>{
+    const items = PRODUCTS.filter(p=>p.cat===c.id && p.ws); if(!items.length) return "";
+    return `<h3 class="qtsub">${c.title}</h3><div style="overflow-x:auto"><table class="qttbl"><thead><tr><th>Product</th><th>Pack</th><th>Wholesale / pack</th><th>Wholesale / carton</th></tr></thead><tbody>`+
+      items.map(p=>`<tr><td><span>${p.name}</span></td><td class="qn" data-l="Pack">${p.unitName} &middot; ${p.pcs} pcs</td><td class="qn" data-l="Per ${p.unitName.toLowerCase()}">${R(p.ws)}</td><td class="qn" data-l="Per carton">${R(p.wsCarton)} <small style="color:var(--muted)">(${p.perCarton} ${many(p)})</small></td></tr>`).join("")+`</tbody></table></div>`;
+  }).join("");
+}
+
 /* ---------- page 2: wholesale order form ---------- */
 const form = $("#wsForm");
 if(form){
@@ -85,7 +96,7 @@ if(form){
         <div class="wth" style="background:${p.bg}">${img(p.img,p.name,"",p.local)}</div>
         <div class="wi"><b>${p.name}</b>
           <small>${p.enquiry?`Made to order · ${p.pcs} cones per pack`:`${p.unitName} · ${p.pcs} pcs &nbsp;|&nbsp; Carton · ${p.perCarton} ${many(p)}`}</small>
-          <span class="wprice"${p.cat==="rani"?' data-rani="1"':""}>${p.cat==="rani"?"":"Price: shared by our Sales Team"}</span><span class="wlinetot" data-tot="${p.id}" hidden></span></div>
+          <span class="wprice"${p.cat==="rani"?' data-rani="1"':""}>${p.cat==="rani"?"":(p.ws?`${rs(p.ws)} / ${p.unitName.toLowerCase()} &middot; ${rs(p.wsCarton)} / carton`:"Price: shared by our Sales Team")}</span><span class="wlinetot" data-tot="${p.id}" hidden></span></div>
         <label class="wq"><span>Cartons</span><input type="number" min="0" step="1" inputmode="numeric" data-id="${p.id}" data-u="carton" placeholder="0"></label>
         <label class="wq"><span>${p.unitName==="Box"?"Boxes":p.unitName==="Pouch"?"Pouches":"Packs"}</span><input type="number" min="0" step="1" inputmode="numeric" data-id="${p.id}" data-u="pack" placeholder="0"></label>
       </div>`).join("")}</div>`;
@@ -103,8 +114,9 @@ if(form){
   function estimate(){
     const r=tierRate(), lines=[]; let total=0, unpriced=0;
     picked().forEach(x=>{
-      if(x.p.cat!=="rani"){ unpriced++; return; }
-      const unit = x.u==="carton" ? r*x.p.perCarton : r, amt = unit*x.n;
+      const base = x.p.cat==="rani" ? r : x.p.ws;
+      if(!base){ unpriced++; return; }
+      const unit = x.u==="carton" ? base*x.p.perCarton : base, amt = unit*x.n;
       total += amt; lines.push({p:x.p,u:x.u,n:x.n,unit,amt});
     });
     return {r,lines,total,unpriced};
@@ -119,17 +131,17 @@ if(form){
     const box=$("#wsEst");
     if(E.lines.length){
       box.hidden=false; box.replaceChildren();
-      const h=document.createElement("b"); h.textContent="Estimated RANI Candy total"; box.appendChild(h);
+      const h=document.createElement("b"); h.textContent="Estimated wholesale total"; box.appendChild(h);
       const t=document.createElement("div"); t.className="west-rows";
       E.lines.forEach(x=>{ const row=document.createElement("div");
-        const a=document.createElement("span"); a.textContent=`${x.p.name.replace(/^RANI\s*/i,"")}: ${x.n} ${x.u==="carton"?(x.n>1?"cartons":"carton"):(x.n>1?"boxes":"box")} \u00d7 ${rs(x.unit)}`;
+        const a=document.createElement("span"); a.textContent=`${x.p.name.replace(/^RANI\s*/i,"")}: ${x.n} ${x.u==="carton"?(x.n>1?"cartons":"carton"):(x.n>1?many(x.p):x.p.unitName.toLowerCase())} \u00d7 ${rs(x.unit)}`;
         const c=document.createElement("b"); c.textContent=rs(x.amt); row.append(a,c); t.appendChild(row); });
       const tot=document.createElement("div"); tot.className="west-total";
-      const ta=document.createElement("span"); ta.textContent=`Estimated total (${TIERS[E.r]})`;
+      const ta=document.createElement("span"); ta.textContent=E.lines.some(x=>x.p.cat==="rani")?`Estimated total (RANI at ${TIERS[E.r]} rate)`:"Estimated total";
       const tb=document.createElement("b"); tb.textContent=rs(E.total); tot.append(ta,tb); t.appendChild(tot);
       box.appendChild(t);
       const n=document.createElement("small");
-      n.textContent="This is an estimate only. It uses the RANI Candy quotation dated 13 October 2026 for the category you chose; the bulk rate applies to orders our sales team confirms as bulk quantity. Excludes transport and other charges. Final prices are confirmed by our Sales Team."+(E.unpriced?` ${E.unpriced} other item${E.unpriced>1?"s":""} will be priced by our Sales Team.`:"");
+      n.textContent="This is an estimate only. It uses our current wholesale rates per box/pouch and per carton. RANI Candy uses the quotation dated 13 October 2026 for the category you chose (the bulk rate applies to orders our sales team confirms as bulk quantity). Excludes transport and other charges. Final prices are confirmed by our Sales Team."+(E.unpriced?` ${E.unpriced} item${E.unpriced>1?"s":""} will be priced by our Sales Team.`:"");
       box.appendChild(n);
     } else box.hidden=true;
     const st=w.state(), ci=w.city();
@@ -146,16 +158,20 @@ if(form){
     const id="BCW-"+Date.now().toString().slice(-6);
     const E=estimate();
     const body = it.map((x,i)=>{ const l=E.lines.find(y=>y.p===x.p&&y.u===x.u); return `${i+1}. ${x.p.name}: ${x.n} ${x.u==="carton"?(x.n>1?"cartons":"carton"):(x.n>1?many(x.p):x.p.unitName.toLowerCase())}`+(l?` (est. ${rs(l.amt)})`:""); }).join("\n");
-    const priceLine = E.lines.length ? `Estimated RANI Candy total: ${rs(E.total)} (${TIERS[E.r]} rate, quotation 13 Oct 2026; estimate only, final price to be confirmed by Sales Team)`+(E.unpriced?`\nOther items: prices to be shared by Sales Team`:"") : "Prices: to be shared by Sales Team";
+    const priceLine = E.lines.length ? `Estimated wholesale total: ${rs(E.total)} (RANI Candy at ${TIERS[E.r]} rate; estimate only, final price to be confirmed by Sales Team)`+(E.unpriced?`\nOther items: prices to be shared by Sales Team`:"") : "Prices: to be shared by Sales Team";
     const msg = `WHOLESALE ORDER ${id}\n\nState: ${st}\nCity: ${ci}\n\n${body}\n\n${priceLine}\n\nName: ${f.name}\nShop/Business: ${f.biz}\nPhone: ${f.phone}\nAddress: ${f.addr}`+(f.note?`\nNotes: ${f.note}`:"");
     const url = f.via==="wa" ? `https://wa.me/${WA}?text=${encodeURIComponent(msg)}` : `mailto:${MAIL}?subject=${encodeURIComponent("Wholesale order "+id+" - Blesscon Candy")}&body=${encodeURIComponent(msg)}`;
     window.open(url, f.via==="wa"?"_blank":"_self");
     form.hidden=true;
     $("#wsDone").hidden=false;
     $("#wsDoneId").textContent=id;
-    const de=$("#wsDoneEst"); if(de){ de.hidden=!E.lines.length; de.textContent=E.lines.length?`Estimated RANI Candy total: ${rs(E.total)} (estimate only \u2014 final prices confirmed by our Sales Team).`:""; }
+    const de=$("#wsDoneEst"); if(de){ de.hidden=!E.lines.length; de.textContent=E.lines.length?`Estimated wholesale total: ${rs(E.total)} (estimate only \u2014 final prices confirmed by our Sales Team).`:""; }
     $("#wsDoneVia").textContent = f.via==="wa" ? "WhatsApp" : "your email app";
     $("#wsDone").scrollIntoView({behavior:"smooth"});
   });
 }
 })();
+
+a[href*="wholesale"] {
+  display: none !important;
+}
