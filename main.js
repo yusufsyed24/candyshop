@@ -92,7 +92,7 @@ function layout(){
   <footer><div class="wrap"><div class="fgrid">
     <div><h4>Blesscon Candy</h4><p>Fruit candy, sour chews, toffees and energy candies, available to order online.</p></div>
     <div><h4>Explore</h4>${L.map(l=>`<a href="${l[1]}">${l[2]}</a>`).join("")}<a href="catalogue.html">Product Catalogue</a></div>
-    <div><h4>Contact</h4><a href="https://wa.me/${CFG.whatsapp}">WhatsApp: +92 3923413905030</a><a href="mailto:${CFG.email}">${CFG.email}</a><h4 class="fol">Follow us</h4>${socialHTML()}</div>
+    <div><h4>Contact</h4><a href="https://wa.me/${CFG.whatsapp}">WhatsApp: +92 341 3905030</a><a href="mailto:${CFG.email}">${CFG.email}</a><h4 class="fol">Follow us</h4>${socialHTML()}</div>
     <div class="copy">© 2026 Blesscon Candy. All rights reserved.</div>
   </div></div></footer>
   <a class="wafloat" id="wafloat" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>

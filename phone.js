@@ -2,7 +2,7 @@
    Adds a searchable country-code picker (default: Pakistan) and validates the
    mobile number against the selected country's rules.
    Usage: any <input name="phone|p"> inside a form is enhanced via BCPhone.enhance(root).
-   The original input becomes hidden and always holds the full number, e.g. "+92 3138993279",
+   The original input becomes hidden and always holds the full number, e.g. "+92 341 3905030",
    so existing submit handlers keep working unchanged. */
 (function(){
 "use strict";
