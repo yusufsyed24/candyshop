@@ -355,6 +355,20 @@ function place(e){
     ? `https://wa.me/${CFG.whatsapp}?text=${encodeURIComponent(msg)}`
     : `mailto:${CFG.email}?subject=${encodeURIComponent("Order "+id+" - Blesscon Candy")}&body=${encodeURIComponent(msg)}`;
   window.open(url, f.via==="wa"?"_blank":"_self");
+  if(window.BCInvoice){
+    BCInvoice.open({
+      id:id,
+      date:new Date().toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric"}),
+      customer:{name:f.name, phone:f.phone},
+      location:r.where, address:f.addr,
+      lines:cart.map(c=>{ const p=find(c.id), pr=priceOf(p,c.unit);
+        return {name:p.name, pack:c.unit==="carton"?`Carton (${p.perCarton} ${many(p)})`:`${p.unitName} (${p.pcs} pcs)`, unit:pr, qty:c.qty, total:pr*c.qty}; }),
+      subtotal:t.amt,
+      delivery:r.kind==="khi"?r.fee:null,
+      deliveryNote:r.kind==="khi"?"Quoted by Blesscon team":"Builty (freight) shared by Blesscon team after order",
+      grand:grand
+    });
+  }
   cart=[]; save(); $("#cnt").textContent="0";
   $("#cartBody").innerHTML=`<div class="done"><div style="font-size:3rem">🎉</div><h3>Order ${id} prepared!</h3><p style="font-size:1.1rem">Subtotal: <b>${money(t.amt)}</b>${r.kind==="khi"&&r.fee!=null?`<br>Delivery: <b>${money(r.fee)}</b><br>Total payable: <b>${money(grand)}</b>`:""}</p>
     <p>Please press <b>Send</b> in ${f.via==="wa"?"WhatsApp":"your email app"} to complete it. ${r.kind==="out"?"Our team will share the builty (freight) charges and confirm dispatch.":"Our team will confirm delivery."}</p><br>
