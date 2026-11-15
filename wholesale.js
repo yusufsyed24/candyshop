@@ -172,6 +172,3 @@ if(form){
 }
 })();
 
-a[href*="wholesale"] {
-  display: none !important;
-}
